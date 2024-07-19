@@ -1,0 +1,484 @@
+:root {
+    --glow-color: hsl(281, 83%, 65%);
+    --glow-color2: hsl(281, 84%, 45%);
+    --glow-color3: hsl(202, 100%, 58%);
+    --glow-color4: hsl(231, 88%, 50%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+.glowing-btn {
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.25em 1em;
+    padding-right: 1.5em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-size: 1em;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    margin-top: 20px;
+
+    -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+        0px 0px 0.5em 0px var(--glow-color);
+    animation: border-flicker 2s linear infinite;
+}
+
+.glowing-txt {
+    float: left;
+    margin-right: -0.8em;
+    -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color2);
+    -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+        0 0 0.45em var(--glow-color2);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color2);
+    animation: text-flicker 3s linear infinite;
+}
+
+.faulty-letter {
+    opacity: 0.5;
+    animation: faulty-flicker 2s linear infinite;
+}
+
+
+
+.glowing-btn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    transition: opacity 100ms linear;
+}
+
+.glowing-btn:hover {
+    color: black;
+    background-color: var(--glow-color);
+    text-shadow: var(--glow-color);
+    box-shadow: 0 0 2em 0.2em var(--glow-color);
+    animation: none;
+}
+
+.glowing-btn:hover .glowing-txt {
+    animation: none;
+}
+
+.glowing-btn:hover .faulty-letter {
+    animation: none;
+    text-shadow: var(--glow-color);
+    opacity: 1;
+}
+
+.glowing-btn:hover:before {
+    filter: blur(1.5em);
+    opacity: 1;
+
+}
+
+.glowing-btn:hover:after {
+    opacity: 1;
+}
+
+@keyframes faulty-flicker {
+    0% {
+        opacity: 0.9;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    21% {
+        opacity: 0.7;
+    }
+
+    21% {
+        opacity: 0.9;
+    }
+
+    22% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    83% {
+        opacity: 0.7;
+    }
+
+    87% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-flicker {
+    0% {
+        opacity: 0.9;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    8% {
+        opacity: 0.7;
+    }
+
+    9% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0.9;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.7;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    72% {
+        opacity: 0.2;
+    }
+
+    77% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+@keyframes border-flicker {
+    0% {
+        opacity: 0.8;
+    }
+
+    2% {
+        opacity: 1;
+    }
+
+    4% {
+        opacity: 0.7;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.glowing-btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    filter: blur(5px);
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.linkContact:hover {
+    position: relative;
+    animation-delay: 10s;
+    animation: textColor 3s ease infinite;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 40px;
+        left: 14px;
+        right: 0;
+        height: 3px;
+        width: 80%;
+        transform: scale(0.9) translateZ(0);
+        filter: blur(1px);
+        background: linear-gradient(to left,
+                #ff5770,
+                #e4428d,
+                #c42da8,
+                #9e16c3,
+                #6501de,
+                #9e16c3,
+                #c42da8,
+                #e4428d,
+                #ff5770);
+        background-size: 200% 100%;
+
+        animation: animateGlow 1.25s linear infinite, widthContact 0.5s;
+    }
+}
+
+@keyframes animateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes widthContact {
+    0% {
+        width: 0%;
+
+    }
+
+    100% {
+        width: 80%;
+
+    }
+}
+
+
+
+.linkHeader a:hover {
+    animation: textColor 3s ease infinite;
+    font-size: 18px;
+}
+
+.linkAbout:hover {
+    animation: textColor 3s ease infinite;
+}
+
+.linkDesktop:hover {
+    position: relative;
+    animation: textColor 3s ease infinite;
+    font-size: 18px;
+}
+
+@keyframes textColor {
+    0% {
+        color: #ff5770;
+    }
+
+    10% {
+        color: #e4428d;
+    }
+
+    20% {
+        color: #c42da8;
+    }
+
+    30% {
+        color: #9e16c3;
+    }
+
+    40% {
+        color: #6501de;
+    }
+
+    50% {
+        color: #9e16c3;
+    }
+
+    60% {
+        color: #c42da8;
+    }
+
+    70% {
+        color: #e4428d;
+    }
+
+    80% {
+        color: #ff5770;
+    }
+
+    90% {
+        color: #e4428d;
+    }
+
+    100% {
+        color: #c42da8;
+    }
+
+}
+
+
+.buttonHomeProjet,
+.buttonHomeProjet *,
+.buttonHomeProjet:after,
+.buttonHomeProjet:before,
+.buttonHomeProjet:after,
+.buttonHomeProjet:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.buttonHomeProjet {
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonHomeProjet:disabled {
+    cursor: default;
+}
+
+.buttonHomeProjet:-moz-focusring {
+    outline: auto;
+}
+
+.buttonHomeProjet svg {
+    display: block;
+}
+
+.buttonHomeProjet [hidden] {
+    display: none;
+}
+
+.buttonHomeProjet {
+    background: linear-gradient(90deg, blue, red);
+    border-radius: 500px;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-weight: 900;
+    overflow: hidden;
+    padding: 1.8rem 5rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.buttonHomeProjet span {
+    background: #1e293b;
+    border-radius: 999px;
+    color: #fff;
+    display: grid;
+    inset: 5px;
+    place-items: center;
+    position: absolute;
+    transition: 0.3s;
+}
+
+.buttonHomeProjet:hover span {
+    background: none;
+}
+
+:root {
+    --glow-hue: 222deg;
+    --shadow-hue: 180deg;
+    --spring-easing: linear(0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+            1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+            1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+            0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+            0.998 84%, 1);
+    --spring-duration: 1.33s;
+}
+
+@property --shimmer {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 33deg;
+}
+
+@keyframes shimmer {
+    0% {
+        --shimmer: 0deg;
+    }
+
+    100% {
+        --shimmer: 360deg;
+    }
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes text {
+    0% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: -100% center;
+    }
+}

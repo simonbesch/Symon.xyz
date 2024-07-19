@@ -1,0 +1,60 @@
+.iconContainer {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ContainerContact {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.contacter {
+  font-size: 12px;
+}
+.pedro {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  animation: rotating 2s linear infinite;
+  cursor: pointer;
+  border: 3px aqua solid;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.InfoContainer {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.InfoContainer p {
+  margin-top: 5px;
+  color: greenyellow;
+}
+.iconContact {
+  margin-top: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 10%;
+}
+.iconContact:hover {
+  background: radial-gradient(rgb(72, 88, 50), black);
+  border-radius: 5px;
+  padding: 1px;
+}
+
+.pp {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  border: 3px rgb(255, 255, 255) solid;
+}

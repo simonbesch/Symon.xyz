@@ -1,0 +1,64 @@
+.Welcome {
+  display: flex;
+  justify-content: center;
+  text-align: end;
+  width: auto;
+  margin-top: 10em;
+  margin-left: 15em;
+}
+
+.PorteFolio {
+  display: flex;
+  justify-content: center;
+  text-align: end;
+  width: auto;
+  margin-top: 1em;
+  margin-left: 10em;
+  color: white;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.5em;
+  color: aqua;
+  width: 100%;
+  height: auto;
+}
+
+.FullStack {
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  width: 50%;
+  margin-top: 1em;
+}
+
+.HomeAllContainer {
+  display: flex;
+}
+
+.HomeAllContainer img {
+  width: 100px;
+}
+.buttonHome {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.iconeHomeContainer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.iconeContactHome:hover {
+  width: 49px;
+  background-color: rgba(49, 49, 49, 0.199);
+  border-radius: 5px;
+}

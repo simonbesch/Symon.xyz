@@ -1,0 +1,77 @@
+.GlobalContainer {
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.404),
+    rgba(0, 255, 0, 0)
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.404),
+    rgba(0, 255, 0, 0)
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.404),
+    rgba(0, 255, 255, 0)
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.404),
+    rgba(0, 255, 255, 0)
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  width: auto;
+  z-index: 10;
+}
+.HamburgerNav {
+  margin-top: 12px;
+}
+
+.ulHearder {
+  margin-left: 10px;
+  margin-top: -55px;
+}
+.linkHeader {
+  display: flex;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.iconNav {
+  width: auto;
+  height: 15px;
+  padding-right: 5px;
+  margin-top: 3px;
+}
+
+.linkContact {
+  padding: 20px;
+  cursor: pointer;
+}
+.linkPlusDiv {
+  display: flex;
+  cursor: pointer;
+}
+.linkContact {
+  margin-top: 5px;
+}
+
+.linkDesktopContainer {
+  display: flex;
+  margin: 10px;
+}
+
+.linkDesktop {
+  padding: 15px;
+}
+
+.logoImg {
+  height: 75px;
+  width: 100px;
+  margin-top: -10px;
+  margin-left: -5px;
+}

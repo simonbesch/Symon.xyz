@@ -1,0 +1,64 @@
+.rouge {
+  color: rgb(253, 99, 99);
+}
+.orange {
+  color: rgb(255, 217, 0);
+}
+.vert {
+  color: rgb(106, 255, 106);
+}
+.doree {
+  color: rgb(255, 0, 191);
+}
+.skillsContainer {
+  margin-top: 30px;
+  margin-left: 35px;
+  margin-bottom: 100px;
+}
+.skillsContainer h1 {
+  margin-bottom: 50px;
+}
+.skillsContainer h4 {
+  padding-top: 35px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  background-color: rgba(29, 29, 29, 0.651);
+}
+.skillsContainer li {
+  margin-left: 25px;
+}
+.skillsContainer ul {
+  background-color: rgba(29, 29, 29, 0.651);
+  padding: 25px;
+}
+
+.TechAndImg {
+  display: flex;
+  align-items: center;
+}
+
+.TechAndImg:hover {
+  background-color: rgb(255, 0, 119, 0.5);
+  border-radius: 10px;
+}
+.skillsContainerD {
+  padding-right: 50px;
+}
+
+@media screen and (min-width: 800px) {
+  .skillsContainerC {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .skillsContainerC {
+    display: flex;
+    justify-content: center;
+  }
+  .skillsContainerD {
+    margin-right: 50px;
+  }
+}

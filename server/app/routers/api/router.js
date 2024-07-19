@@ -6,9 +6,17 @@ const router = express.Router();
 // Import And Use Routers Here
 /* ************************************************************************* */
 
-const itemsRouter = require("./items/router");
+const skillsRouter = require("./skills/router");
+router.use("/skills", skillsRouter);
 
-router.use("/items", itemsRouter);
+const parkourRouter = require("./parkour/router");
+router.use("/parkour", parkourRouter);
+
+const projetsRouter = require("./projets/router");
+router.use("/projets", projetsRouter);
+
+const authRouter = require("./auth/router");
+router.use("/auth", authRouter);
 
 /* ************************************************************************* */
 

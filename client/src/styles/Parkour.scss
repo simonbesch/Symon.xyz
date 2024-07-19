@@ -1,0 +1,45 @@
+.parkourContainer {
+  margin-top: 45px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 200px;
+  background-color: rgba(59, 59, 59, 0.651);
+  border-radius: 15px;
+  padding-bottom: 25px;
+}
+.liDate {
+  margin-top: 25px;
+  font-size: 15px;
+}
+.liEvenement {
+  color: aqua;
+}
+.liEvenement:hover {
+  color: rgb(255, 0, 119);
+  font-size: 20px;
+}
+.ulParkourCroissant {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ulParkourDeCroissant {
+  display: flex;
+  flex-direction: column;
+}
+.parkourAndTrial {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  width: auto;
+}
+.imgTrial {
+  width: 100%;
+  height: 100%;
+}
+.btnTrial {
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
