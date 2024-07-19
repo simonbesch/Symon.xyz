@@ -104,6 +104,11 @@ function Projets() {
       <div className="ProjectContainer">{mapCheckPoints}</div>
       <h3>Ateliers et Quests WCS:</h3>
       <div className="ProjectContainer">{ateliersQuestes}</div>
+      {isAdmin ? (
+        <Link to={`/projets/add`}>
+          <button className="btnAddEdit"> + </button>
+        </Link>
+      ) : null}
     </div>
   );
 }

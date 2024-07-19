@@ -5,9 +5,9 @@ function Login() {
     <Form method="post">
       <div className="form-group">
         <label htmlFor="email">mail :</label>
-        <input type="text" id="email" name="email" />
+        <input type="text" id="email" name="email" required />
         <label htmlFor="password">password :</label>
-        <input type="text" id="password" name="password" />
+        <input type="password" id="password" name="password" required />
       </div>
       <button type="submit">connection</button>
     </Form>

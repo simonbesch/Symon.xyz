@@ -8,7 +8,7 @@ function Home() {
   const { isAdmin } = useAdmin();
   return (
     <div>
-      {isAdmin ? <p>t admin enculé</p> : <p>tes une merde d'user de merde</p>}
+      {isAdmin ? <p>t admin enculé</p> : null}
       <div className="Welcome">
         <h5>Bienvenue</h5>
       </div>

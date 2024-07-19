@@ -13,7 +13,7 @@ function AdminSkillsEdit() {
       ) : (
         <>
           <h1> {skills.name} </h1>
-          <Form method="put">
+          <Form method="put" className="formGlobal">
             <div className="form-group">
               <label htmlFor="name">Nom :</label>
               <input

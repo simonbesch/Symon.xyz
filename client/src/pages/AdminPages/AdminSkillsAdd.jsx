@@ -11,8 +11,8 @@ function AdminSkillsAdd() {
         <Nop />
       ) : (
         <>
-          <h1> POST SKILLS </h1>
-          <Form method="post">
+          <h1> Ajouter un skills : </h1>
+          <Form method="post" className="formGlobal">
             <div className="form-group">
               <label htmlFor="name">Nom :</label>
               <input type="text" id="name" name="name" />
@@ -27,11 +27,10 @@ function AdminSkillsAdd() {
               <label htmlFor="icon">icon :</label>
               <input type="text" id="icon" name="icon" />
             </div>
-            <button type="submit">Modifier</button>
+            <button type="submit">Ajouter</button>
           </Form>
         </>
       )}
-      ;
     </>
   );
 }

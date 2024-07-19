@@ -119,7 +119,7 @@ function Skills() {
         {isAdmin ? (
           <Link to={`/skills/add`}>
             <div className="skillsContainerD">
-              <h4>Ajouter un skills</h4>
+              <h4>Ajouter un skills + </h4>
             </div>
           </Link>
         ) : null}

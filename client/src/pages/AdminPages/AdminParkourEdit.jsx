@@ -12,8 +12,8 @@ function AdminParkourEdit() {
         <Nop />
       ) : (
         <>
-          <h1> {parkour.id} </h1>
-          <Form method="put">
+          <h1> {parkour.poste} </h1>
+          <Form method="put" className="formGlobal">
             <div className="form-group">
               <label htmlFor="date">date :</label>
               <input

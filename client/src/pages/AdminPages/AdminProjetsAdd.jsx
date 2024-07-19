@@ -11,8 +11,8 @@ function AdminProjetsAdd() {
         <Nop />
       ) : (
         <>
-          <h1> POST Projets </h1>
-          <Form method="post">
+          <h1> Ajouter un projet : </h1>
+          <Form method="post" className="formGlobal">
             <div className="form-group">
               <label htmlFor="title">title :</label>
               <input type="text" id="title" name="title" />
@@ -68,7 +68,7 @@ function AdminProjetsAdd() {
               <label htmlFor="img10">img10 :</label>
               <input type="text" id="img10" name="img10" />
             </div>
-            <button type="submit">Modifier</button>
+            <button type="submit">Ajouter</button>
           </Form>
         </>
       )}

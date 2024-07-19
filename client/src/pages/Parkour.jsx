@@ -37,6 +37,11 @@ function Parkour() {
       >
         {divData.id === data.id ? <p>{data.description}</p> : null}
       </div>
+      {isAdmin ? (
+        <Link to={`/parkour/${data.id}`}>
+          <button className="btnAddEdit"> + </button>
+        </Link>
+      ) : null}
     </p>
   ));
 
@@ -64,6 +69,11 @@ function Parkour() {
         <button className="btnTrial" onClick={trialChange}>
           <img src={trial} alt="Trier" className="imgTrial" />
         </button>
+        {isAdmin ? (
+          <Link to={`/parkour/add`}>
+            <button className="btnAddEdit"> + </button>
+          </Link>
+        ) : null}
       </div>
 
       <ul

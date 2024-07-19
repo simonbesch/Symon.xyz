@@ -13,7 +13,7 @@ function AdminProjetsEdit() {
       ) : (
         <>
           <h1> {projets.name} </h1>
-          <Form method="put">
+          <Form method="put" className="formGlobal">
             <div className="form-group">
               <label htmlFor="title">title :</label>
               <input

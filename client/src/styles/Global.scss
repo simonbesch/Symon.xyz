@@ -22,3 +22,49 @@ html {
   filter: blur(10px);
   margin: 0;
 }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formGlobal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input {
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.btnAddEdit {
+  margin: 10px;
+  padding: 0px 5px 0px 5px;
+  border-radius: 50px;
+  border: 1px solid black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+}
