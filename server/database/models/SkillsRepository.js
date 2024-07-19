@@ -20,7 +20,7 @@ class SkillsRepository extends AbstractRepository {
 
   async update(skills) {
     const [result] = await this.database.query(
-      `update ${this.table} set name = ?, level = ?, levelCSS = ?, description = ?, category = ?, icon = ?`,
+      `update ${this.table} set name = ?, level = ?, levelCSS = ?, description = ?, category = ?, icon = ? where id = ?`,
 
       [
         skills.name,
@@ -29,6 +29,7 @@ class SkillsRepository extends AbstractRepository {
         skills.description,
         skills.category,
         skills.icon,
+        skills.id,
       ]
     );
     console.info(result.affectedRows);

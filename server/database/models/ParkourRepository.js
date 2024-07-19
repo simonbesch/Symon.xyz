@@ -20,7 +20,7 @@ class ParkourRepository extends AbstractRepository {
 
   async update(parkour) {
     const [result] = await this.database.query(
-      `update ${this.table} set date = ?, lieu = ?, poste = ?, structure = ?, type = ?, actuel = ?, description = ?`,
+      `update ${this.table} set date = ?, lieu = ?, poste = ?, structure = ?, type = ?, actuel = ?, description = ? where id = ?`,
 
       [
         parkour.date,
@@ -30,6 +30,7 @@ class ParkourRepository extends AbstractRepository {
         parkour.type,
         parkour.actuel,
         parkour.description,
+        parkour.id,
       ]
     );
     console.info(result.affectedRows);

@@ -20,7 +20,7 @@ class ProjetsRepository extends AbstractRepository {
 
   async update(projets) {
     const [result] = await this.database.query(
-      `update ${this.table} set title = ?, description1 = ?, description2 = ?, description2 = ?, github = ?, online = ?, lien = ?, category = ?, img1 = ?, img2 = ?, img3 = ?, img4 = ?, img5 = ?, img6 = ?, img7 = ?, img8 = ?, img9 = ?, img10 = ?`,
+      `update ${this.table} set title = ?, description1 = ?, description2 = ?, description2 = ?, github = ?, online = ?, lien = ?, category = ?, img1 = ?, img2 = ?, img3 = ?, img4 = ?, img5 = ?, img6 = ?, img7 = ?, img8 = ?, img9 = ?, img10 = ? where id = ?`,
 
       [
         projets.title,
@@ -41,6 +41,7 @@ class ProjetsRepository extends AbstractRepository {
         projets.img8,
         projets.img9,
         projets.img10,
+        projets.id,
       ]
     );
     console.info(result.affectedRows);
