@@ -11,11 +11,11 @@ function AdminProjetsEdit() {
       {isAdmin === false ? (
         <Nop />
       ) : (
-        <>
+        <div className="EditAddContainer">
           <h1> {projets.name} </h1>
           <Form method="put" className="formGlobal">
             <div className="form-group">
-              <label htmlFor="title">title :</label>
+              <label htmlFor="title">Titre :</label>
               <input
                 type="text"
                 id="title"
@@ -25,7 +25,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description1">description1 :</label>
+              <label htmlFor="description1">Description1 :</label>
               <input
                 type="text"
                 id="description1"
@@ -35,7 +35,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description2">description2 :</label>
+              <label htmlFor="description2">Description2 :</label>
               <input
                 type="text"
                 id="description2"
@@ -45,7 +45,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description3">description3 :</label>
+              <label htmlFor="description3">Description3 :</label>
               <input
                 type="text"
                 id="description3"
@@ -55,7 +55,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="github">github :</label>
+              <label htmlFor="github">Github :</label>
               <input
                 type="text"
                 id="github"
@@ -65,7 +65,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="online">online :</label>
+              <label htmlFor="online">Online :</label>
               <input
                 type="text"
                 id="online"
@@ -75,7 +75,7 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="lien">lien :</label>
+              <label htmlFor="lien">Lien :</label>
               <input
                 type="text"
                 id="lien"
@@ -85,13 +85,17 @@ function AdminProjetsEdit() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="category">category :</label>
-              <input
-                type="text"
+              <label htmlFor="category">Category :</label>
+              <select
                 id="category"
                 name="category"
                 defaultValue={projets.category}
-              />
+              >
+                <option value="projets">Projets</option>
+                <option value="checkPoints">CheckPoints</option>
+                <option value="ateliersQuestes">Ateliers et Quêtes</option>
+                <option value="projetsPerso">Projets Perso</option>
+              </select>
             </div>
 
             <div className="form-group">
@@ -196,10 +200,10 @@ function AdminProjetsEdit() {
 
             <button type="submit">Modifier</button>
           </Form>
-          <Form method="delete">
+          <Form method="delete" className="deleteBTN">
             <button type="submit">Supprimer</button>
           </Form>
-        </>
+        </div>
       )}
     </>
   );

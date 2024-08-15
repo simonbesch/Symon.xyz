@@ -8,6 +8,10 @@ html {
   background-color: black;
   color: antiquewhite;
 }
+main {
+  display: flex;
+  justify-content: center;
+}
 .background-video {
   width: 100vw;
   height: 100vh;
@@ -28,6 +32,63 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 300px;
+
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    &:hover {
+      background-color: rgb(125, 54, 158);
+    }
+  }
+  select {
+    padding: 10px;
+    width: 230px;
+    border-radius: 5px;
+    border: 0px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 25px;
+    &:hover {
+      background-color: rgb(125, 54, 158);
+    }
+  }
+  label {
+    font-size: 18px;
+    color: white;
+  }
+  button {
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 0px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    &:hover {
+      background-color: rgb(71, 22, 94);
+    }
+  }
+}
+.EditAddContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  h1 {
+    margin-bottom: 25px;
+  }
+  button {
+    margin: 25px;
+  }
 }
 
 .formGlobal {
@@ -45,26 +106,48 @@ html {
   }
 
   button {
-    margin-top: 25px;
-    padding: 10px 25px 10px 25px;
-    border-radius: 5px;
-
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
     &:hover {
-      background-color: black;
-      color: white;
+      background-color: rgb(22, 94, 46);
     }
   }
 }
 
 .btnAddEdit {
   margin: 10px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 10px 0px 10px;
   border-radius: 50px;
-  border: 1px solid black;
+  border: 1px solid rgb(38, 172, 26);
+  background-color: #59f8de3f;
+  color: rgb(255, 255, 255);
 
   &:hover {
     background-color: black;
     color: white;
     border: 1px solid white;
+  }
+}
+
+.deleteBTN {
+  margin-bottom: 100px;
+  button {
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(128, 4, 0);
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    &:hover {
+      background-color: rgb(131, 10, 60);
+    }
   }
 }

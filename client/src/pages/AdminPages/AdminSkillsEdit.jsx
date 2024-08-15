@@ -11,7 +11,7 @@ function AdminSkillsEdit() {
       {isAdmin === false ? (
         <Nop />
       ) : (
-        <>
+        <div className="EditAddContainer">
           <h1> {skills.name} </h1>
           <Form method="put" className="formGlobal">
             <div className="form-group">
@@ -24,25 +24,31 @@ function AdminSkillsEdit() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="level">level :</label>
-              <input
-                type="text"
-                id="level"
-                name="level"
-                defaultValue={skills.level}
-              />
+              <label htmlFor="level">Level :</label>
+              <select id="level" name="level" defaultValue={skills.level}>
+                <option value="Maitrise">Maitrise</option>
+                <option value="En Cour">En Cour</option>
+                <option value="Debut d'aprentissage">
+                  Debut d'aprentissage
+                </option>
+                <option value="Passion">Passion</option>
+              </select>
             </div>
             <div className="form-group">
-              <label htmlFor="levelCSS">levelCSS :</label>
-              <input
-                type="text"
+              <label htmlFor="levelCSS">LevelCSS :</label>
+              <select
                 id="levelCSS"
                 name="levelCSS"
                 defaultValue={skills.levelCSS}
-              />
+              >
+                <option value="vert">Vert</option>
+                <option value="orange">Orange</option>
+                <option value="rouge">Rouge</option>
+                <option value="doree">Doree</option>
+              </select>
             </div>
             <div className="form-group">
-              <label htmlFor="description">description :</label>
+              <label htmlFor="description">Description :</label>
               <input
                 type="text"
                 id="description"
@@ -51,16 +57,21 @@ function AdminSkillsEdit() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="category">category :</label>
-              <input
-                type="text"
+              <label htmlFor="category">Category :</label>
+              <select
                 id="category"
                 name="category"
                 defaultValue={skills.category}
-              />
+              >
+                <option value="Technos">Technos</option>
+                <option value="AutresTechnos">AutresTechnos</option>
+                <option value="Logiciels">Logiciels</option>
+                <option value="Langues">Langues</option>
+                <option value="InteretPerso">InteretPerso</option>
+              </select>
             </div>
             <div className="form-group">
-              <label htmlFor="icon">icon :</label>
+              <label htmlFor="icon">Icon :</label>
               <input
                 type="text"
                 id="icon"
@@ -70,10 +81,10 @@ function AdminSkillsEdit() {
             </div>
             <button type="submit">Modifier</button>
           </Form>
-          <Form method="delete">
+          <Form method="delete" className="deleteBTN">
             <button type="submit">Supprimer</button>
           </Form>
-        </>
+        </div>
       )}
     </>
   );

@@ -106,7 +106,7 @@ function Projets() {
       <div className="ProjectContainer">{ateliersQuestes}</div>
       {isAdmin ? (
         <Link to={`/projets/add`}>
-          <button className="btnAddEdit"> + </button>
+          <button className="btnAddEdit"> Ajouter </button>
         </Link>
       ) : null}
     </div>

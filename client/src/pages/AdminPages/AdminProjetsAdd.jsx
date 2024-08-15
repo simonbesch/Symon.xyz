@@ -10,33 +10,38 @@ function AdminProjetsAdd() {
       {isAdmin === false ? (
         <Nop />
       ) : (
-        <>
+        <div className="EditAddContainer">
           <h1> Ajouter un projet : </h1>
           <Form method="post" className="formGlobal">
             <div className="form-group">
-              <label htmlFor="title">title :</label>
+              <label htmlFor="title">Titre :</label>
               <input type="text" id="title" name="title" />
 
-              <label htmlFor="description1">description1 :</label>
+              <label htmlFor="description1">Description1 :</label>
               <input type="text" id="description1" name="description1" />
 
-              <label htmlFor="description2">description2 :</label>
+              <label htmlFor="description2">Description2 :</label>
               <input type="text" id="description2" name="description2" />
 
-              <label htmlFor="description3">description3 :</label>
+              <label htmlFor="description3">Description3 :</label>
               <input type="text" id="description3" name="description3" />
 
-              <label htmlFor="github">github :</label>
+              <label htmlFor="github">Github :</label>
               <input type="text" id="github" name="github" />
 
-              <label htmlFor="online">online :</label>
+              <label htmlFor="online">Online :</label>
               <input type="text" id="online" name="online" />
 
-              <label htmlFor="lien">lien :</label>
+              <label htmlFor="lien">Lien :</label>
               <input type="text" id="lien" name="lien" />
 
-              <label htmlFor="category">category :</label>
-              <input type="text" id="category" name="category" />
+              <label htmlFor="category">Category :</label>
+              <select id="category" name="category">
+                <option value="projets">Projets</option>
+                <option value="checkPoints">CheckPoints</option>
+                <option value="ateliersQuestes">Ateliers et Quêtes</option>
+                <option value="projetsPerso">Projets Perso</option>
+              </select>
 
               <label htmlFor="img1">img1 :</label>
               <input type="text" id="img1" name="img1" />
@@ -70,9 +75,8 @@ function AdminProjetsAdd() {
             </div>
             <button type="submit">Ajouter</button>
           </Form>
-        </>
+        </div>
       )}
-      ;
     </>
   );
 }

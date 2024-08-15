@@ -58,7 +58,7 @@ function Skills() {
     ) : null
   );
   const mapSkillsInteretPerso = skills.map((data, index) =>
-    data.category === "Langues" ? (
+    data.category === "InteretPerso" ? (
       isAdmin ? (
         <Link to={`/skills/${data.id}`}>
           <p key={index} className="TechAndImg">
@@ -75,7 +75,7 @@ function Skills() {
     ) : null
   );
   const mapSkillsLangues = skills.map((data, index) =>
-    data.category === "InteretPerso" ? (
+    data.category === "Langues" ? (
       isAdmin ? (
         <Link to={`/skills/${data.id}`}>
           <p key={index} className="TechAndImg">
@@ -118,7 +118,7 @@ function Skills() {
         </div>
         {isAdmin ? (
           <Link to={`/skills/add`}>
-            <div className="skillsContainerD">
+            <div className="skillsContainerD adminAddSkills">
               <h4>Ajouter un skills + </h4>
             </div>
           </Link>

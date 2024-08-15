@@ -1,11 +1,21 @@
 import PropTypes from "prop-types";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import { useWeather } from "../contexts/WeatherContext";
 import "../styles/Footer.scss";
 import logo from "../assets/logo.png";
 
+import { useAdmin } from "../contexts/AdminContext";
+
 function Footer() {
   const { time, isLoading } = useWeather();
+  const { isAdmin } = useAdmin();
+
+  const clearCookies = () => {
+    Cookies.remove("authData");
+    window.location.reload();
+  };
+
   return (
     <footer>
       {isLoading ? (
@@ -25,11 +35,16 @@ function Footer() {
           A propos du site ?
         </Link>
         &ensp;
-        <Link to="/login" className="linkAbout">
-          Connection
-        </Link>
+        {isAdmin ? (
+          <Link to="/" onClick={clearCookies} className="linkAbout">
+            Déconnection
+          </Link>
+        ) : (
+          <Link to="/login" className="linkAbout">
+            Connection
+          </Link>
+        )}
       </h5>
-
       <img src={logo} alt="" className="logoImg" />
     </footer>
   );

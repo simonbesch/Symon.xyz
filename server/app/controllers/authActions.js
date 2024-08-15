@@ -5,11 +5,9 @@ const tables = require("../../database/tables");
 
 const login = async (req, res, next) => {
   try {
-    console.info("from front", req.body);
     const user = await tables.user.readByEmailWithPassword(req.body.email);
 
     if (user == null) {
-      console.info(req.body.email);
       res.sendStatus(422);
       return;
     }

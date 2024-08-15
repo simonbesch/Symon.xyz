@@ -93,7 +93,7 @@ const router = createBrowserRouter([
                 }
               );
 
-              return redirect(`/parkour/${params.id}`);
+              return redirect(`/parkour`);
             }
 
             case "delete": {
@@ -165,7 +165,7 @@ const router = createBrowserRouter([
                 }
               );
 
-              return redirect(`/skills/${params.id}`);
+              return redirect(`/skills`);
             }
 
             case "delete": {

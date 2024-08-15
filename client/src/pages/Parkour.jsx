@@ -17,7 +17,7 @@ function Parkour() {
   const mapCv = parkour.map((data) => (
     <p key={data.id}>
       <li className="liDate">
-        {data.date}, {data.lieu} :
+        {data.date}, {data.lieu} : {data.actuel === 1 ? " (En poste) " : null}
       </li>
       <li
         className="liEvenement"
@@ -27,7 +27,8 @@ function Parkour() {
           }
         }}
       >
-        {data.poste}
+        {data.poste} - {data.structure}
+        {data.type === "" ? null : ` - ${data.type}`}
       </li>
       <div
         onClick={() => {
@@ -35,11 +36,13 @@ function Parkour() {
           setModalIsOpen(true);
         }}
       >
-        {divData.id === data.id ? <p>{data.description}</p> : null}
+        {divData.id === data.id ? (
+          <p className="plusDinfos">- plus d'informations -</p>
+        ) : null}
       </div>
       {isAdmin ? (
         <Link to={`/parkour/${data.id}`}>
-          <button className="btnAddEdit"> + </button>
+          <button className="btnAddEdit"> Modifier </button>
         </Link>
       ) : null}
     </p>
@@ -71,13 +74,13 @@ function Parkour() {
         </button>
         {isAdmin ? (
           <Link to={`/parkour/add`}>
-            <button className="btnAddEdit"> + </button>
+            <button className="btnAddEdit"> Ajouter </button>
           </Link>
         ) : null}
       </div>
 
       <ul
-        className={isCroissant ? "ulParkourDeCroissant" : "ulParkourCroissant"}
+        className={isCroissant ? "ulParkourCroissant" : "ulParkourDeCroissant"}
       >
         {mapCv}
       </ul>
@@ -87,9 +90,18 @@ function Parkour() {
         style={customStyles}
       >
         <h1>{modalData.evenement}</h1>
-        <p>{modalData.date}</p>
+        <p>Date: {modalData.date}</p>
+        <p>Lieu: {modalData.lieu}</p>
+        <p>Poste: {modalData.poste}</p>
+        <p>Structure: {modalData.structure}</p>
+        <p>Type: {modalData.type}</p>
+        <p>
+          En poste ? {modalData.actuel === 1 ? "actuellement en poste" : null}
+        </p>
+        <p>Description: {modalData.description}</p>
         <div>
-          <button onClick={() => setModalIsOpen(false)}>X</button>
+          <br />
+          <button onClick={() => setModalIsOpen(false)}>Fermer</button>
         </div>
       </Modal>
     </div>

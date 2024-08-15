@@ -3,11 +3,13 @@ import { Squash as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useClickAway } from "@uidotdev/usehooks";
 import { useRef, useState } from "react";
+import { useAdmin } from "../contexts/AdminContext";
 import routes from "../datas/navbarRoutes";
 import "../styles/Navbar.scss";
 import "../styles/anim.css";
 
 function NavbarMobile() {
+  const { isAdmin } = useAdmin();
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
   useClickAway(ref, () => setOpen(false));
@@ -55,6 +57,14 @@ function NavbarMobile() {
         </AnimatePresence>
       </div>
       <div className="linkPlusDiv">
+        {isAdmin ? (
+          <img
+            src="https://img.icons8.com/?size=100&id=118624&format=png&color=000000"
+            alt=""
+            className="logoImgAdmin"
+          />
+        ) : null}
+
         <Link to="/projets" className="linkProjets">
           <button className="glowing-btn">
             <span className="glowing-txt">

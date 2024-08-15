@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import "../styles/Navbar.scss";
 import "../styles/anim.css";
 import logo from "../assets/logo.png";
+import { useAdmin } from "../contexts/AdminContext";
 
 function NavbarDesktop() {
+  const { isAdmin } = useAdmin();
   return (
     <div>
       <div className="GlobalContainer">
@@ -22,6 +24,13 @@ function NavbarDesktop() {
           </Link>
         </div>
         <div className="linkPlusDiv">
+          {isAdmin ? (
+            <img
+              src="https://img.icons8.com/?size=100&id=118624&format=png&color=000000"
+              alt=""
+              className="logoImgAdmin"
+            />
+          ) : null}
           <Link to="/projets" className="linkProjets">
             <button className="glowing-btn">
               <span className="glowing-txt">

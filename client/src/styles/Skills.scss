@@ -14,9 +14,10 @@
   margin-top: 30px;
   margin-left: 35px;
   margin-bottom: 100px;
+  width: 100%;
 }
 .skillsContainer h1 {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 .skillsContainer h4 {
   padding-top: 35px;
@@ -43,6 +44,8 @@
 }
 .skillsContainerD {
   padding-right: 50px;
+
+  margin-top: 25px;
 }
 
 @media screen and (min-width: 800px) {
@@ -53,12 +56,19 @@
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1800px) {
   .skillsContainerC {
     display: flex;
     justify-content: center;
   }
   .skillsContainerD {
-    margin-right: 50px;
+    margin-right: 15px;
+  }
+}
+
+.adminAddSkills {
+  color: green;
+  &:hover {
+    color: aqua;
   }
 }
