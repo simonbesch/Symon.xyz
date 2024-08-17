@@ -1,117 +1,133 @@
 import "../styles/ProjetsDetails.scss";
 import { useLoaderData, Link, useParams } from "react-router-dom";
 import { useAdmin } from "../contexts/AdminContext";
+import TextareaAutosize from "react-textarea-autosize";
 
 function ProjetsDetails() {
   const details = useLoaderData();
-  console.info("caca", details);
   const { isAdmin } = useAdmin();
-  const { id } = useParams();
 
-  // const mapProjetsDetails = projetDetails.map((datas) =>
-  //   datas.id === id ? (
-  //     <div key={datas.id} className="DPContainer">
-  //       <h1>{datas.name}</h1>
-  //       {datas.online === "" ? null : (
-  //         <div className="DPOnline">
-  //           <h4>
-  //             <img
-  //               src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
-  //               alt=""
-  //               className="arrowProjet"
-  //             />
-  //             <a href={datas.online} target="_blanck">
-  //               <button className="btnDeployement">
-  //                 Lien du site (déployement)
-  //               </button>
-  //             </a>
-  //           </h4>
-  //         </div>
-  //       )}
-  //       {datas.github === "" ? null : (
-  //         <div className="DPGithub">
-  //           <h4>
-  //             <img
-  //               src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
-  //               alt=""
-  //               className="arrowProjet"
-  //             />
-  //             <a href={datas.github} target="_blanck">
-  //               Visiter le repository Github
-  //             </a>
-  //           </h4>
-  //         </div>
-  //       )}
-  //       {datas.lien === "" ? null : (
-  //         <div className="DPLien">
-  //           <h4>
-  //             <img
-  //               src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
-  //               alt=""
-  //               className="arrowProjet"
-  //             />
-  //             <a href={datas.lien} target="_blanck">
-  //               Autre Lien
-  //             </a>
-  //           </h4>
-  //         </div>
-  //       )}
-  //       {datas.mates === "" ? null : (
-  //         <div className="DPMates">
-  //           <h4>Equipe :</h4>
-  //           <p>{datas.mates}</p>
-  //         </div>
-  //       )}
-  //       {datas.description === "" ? null : (
-  //         <div className="DPDescription">
-  //           <h4>Description : </h4>
-  //           <p>{datas.description}</p>
-  //           <br />
-  //           {datas.description2 === "" ? null : <p>{datas.description2}</p>}
-  //           <br />
-  //           {datas.description3 === "" ? null : <p>{datas.description3}</p>}
-  //         </div>
-  //       )}
-  //       {datas.img === "" ? null : (
-  //         <div className="DPimgContainerP">
-  //           <h4>Images du projet :</h4>
-  //           <div className="DPimgContainer">
-  //             <img src={datas.img} alt="" className="DPimg" />
-  //             {datas.img2 === "" ? null : (
-  //               <img src={datas.img2} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img3 === "" ? null : (
-  //               <img src={datas.img3} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img4 === "" ? null : (
-  //               <img src={datas.img4} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img5 === "" ? null : (
-  //               <img src={datas.img5} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img6 === "" ? null : (
-  //               <img src={datas.img6} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img7 === "" ? null : (
-  //               <img src={datas.img7} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img8 === "" ? null : (
-  //               <img src={datas.img8} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img9 === "" ? null : (
-  //               <img src={datas.img9} alt="" className="DPimg" />
-  //             )}
-  //             {datas.img10 === "" ? null : (
-  //               <img src={datas.img10} alt="" className="DPimg" />
-  //             )}{" "}
-  //           </div>
-  //         </div>
-  //       )}
-  //     </div>
-  //   ) : null
-  // );
-
-  return <div>{details.title}</div>;
+  return (
+    <div key={details.id} className="DPContainer">
+      <h1>{details.title}</h1>
+      {details.online === "" ? null : (
+        <div className="DPOnline">
+          <h4>
+            <img
+              src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
+              alt=""
+              className="arrowProjet"
+            />
+            <a href={details.online} target="_blanck">
+              <button className="btnDeployement">
+                Lien du site (déployement)
+              </button>
+            </a>
+          </h4>
+        </div>
+      )}
+      {details.github === "" ? null : (
+        <div className="DPGithub">
+          <h4>
+            <img
+              src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
+              alt=""
+              className="arrowProjet"
+            />
+            <a href={details.github} target="_blanck">
+              Visiter le repository Github
+            </a>
+          </h4>
+        </div>
+      )}
+      {details.lien === "" ? null : (
+        <div className="DPLien">
+          <h4>
+            <img
+              src="https://img.icons8.com/?size=100&id=gkgXdvj3Owk3&format=png&color=000000"
+              alt=""
+              className="arrowProjet"
+            />
+            <a href={details.lien} target="_blanck">
+              Autre Lien
+            </a>
+          </h4>
+        </div>
+      )}
+      {details.mates === "" ? null : (
+        <div className="DPMates">
+          <h4>Equipe :</h4>
+          <p>{details.mates}</p>
+        </div>
+      )}
+      {details.description1 === "" ? null : (
+        <div className="DPDescription">
+          <h4>Description : </h4>
+          <TextareaAutosize
+            defaultValue={details.description1}
+            readonly="readonly"
+            className="textAreaComponant"
+          />
+          <br />
+          {details.description2 === "" ? null : (
+            <TextareaAutosize
+              defaultValue={details.description2}
+              readonly="readonly"
+              className="textAreaComponant"
+            />
+          )}
+          <br />
+          {details.description3 === "" ? null : (
+            <TextareaAutosize
+              defaultValue={details.description3}
+              readonly="readonly"
+              className="textAreaComponant"
+            />
+          )}
+        </div>
+      )}
+      {details.img1 === "" ? null : (
+        <div className="DPimgContainerP">
+          <h4>Images du projet :</h4>
+          <div className="DPimgContainer">
+            <img src={details.img1} alt="" className="DPimg" />
+            {details.img2 === "" ? null : (
+              <img src={details.img2} alt="" className="DPimg" />
+            )}
+            {details.img3 === "" ? null : (
+              <img src={details.img3} alt="" className="DPimg" />
+            )}
+            {details.img4 === "" ? null : (
+              <img src={details.img4} alt="" className="DPimg" />
+            )}
+            {details.img5 === "" ? null : (
+              <img src={details.img5} alt="" className="DPimg" />
+            )}
+            {details.img6 === "" ? null : (
+              <img src={details.img6} alt="" className="DPimg" />
+            )}
+            {details.img7 === "" ? null : (
+              <img src={details.img7} alt="" className="DPimg" />
+            )}
+            {details.img8 === "" ? null : (
+              <img src={details.img8} alt="" className="DPimg" />
+            )}
+            {details.img9 === "" ? null : (
+              <img src={details.img9} alt="" className="DPimg" />
+            )}
+            {details.img10 === "" ? null : (
+              <img src={details.img10} alt="" className="DPimg" />
+            )}{" "}
+          </div>
+        </div>
+      )}
+      {isAdmin ? (
+        <Link to={`/projets/${details.id}`}>
+          <button className="btnAddEdit"> Modifier </button>
+        </Link>
+      ) : null}
+    </div>
+  );
 }
 
 export default ProjetsDetails;

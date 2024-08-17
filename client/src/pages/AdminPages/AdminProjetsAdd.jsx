@@ -18,13 +18,16 @@ function AdminProjetsAdd() {
               <input type="text" id="title" name="title" />
 
               <label htmlFor="description1">Description1 :</label>
-              <input type="text" id="description1" name="description1" />
+              <textarea type="text" id="description1" name="description1" />
 
               <label htmlFor="description2">Description2 :</label>
-              <input type="text" id="description2" name="description2" />
+              <textarea type="text" id="description2" name="description2" />
 
               <label htmlFor="description3">Description3 :</label>
-              <input type="text" id="description3" name="description3" />
+              <textarea type="text" id="description3" name="description3" />
+
+              <label htmlFor="mates">Mates :</label>
+              <input type="text" id="mates" name="mates" />
 
               <label htmlFor="github">Github :</label>
               <input type="text" id="github" name="github" />
@@ -41,6 +44,7 @@ function AdminProjetsAdd() {
                 <option value="checkPoints">CheckPoints</option>
                 <option value="ateliersQuestes">Ateliers et Quêtes</option>
                 <option value="projetsPerso">Projets Perso</option>
+                <option value="sitesPerso">Sites Perso</option>
               </select>
 
               <label htmlFor="img1">img1 :</label>

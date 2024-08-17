@@ -21,6 +21,7 @@ import AdminParkourEdit from "./pages/AdminPages/AdminParkourEdit";
 import AdminParkourAdd from "./pages/AdminPages/AdminParkourAdd";
 import AdminProjetsEdit from "./pages/AdminPages/AdminProjetsEdit";
 import AdminProjetsAdd from "./pages/AdminPages/AdminProjetsAdd";
+import EditInfos from "./pages/AdminPages/EditInfos";
 import "./styles/Global.scss";
 import { AdminProvider } from "./contexts/AdminContext";
 import { WeatherProvider } from "./contexts/WeatherContext";
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         errorElement: <ErrorPage />,
+        loader: async ({}) => {
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+          );
+          return response.data;
+        },
       },
       {
         path: "/login",
@@ -231,6 +238,7 @@ const router = createBrowserRouter([
                   description1: formData.get("description1"),
                   description2: formData.get("description2"),
                   description3: formData.get("description3"),
+                  mates: formData.get("mates"),
                   github: formData.get("github"),
                   online: formData.get("online"),
                   lien: formData.get("lien"),
@@ -248,7 +256,7 @@ const router = createBrowserRouter([
                 }
               );
 
-              return redirect(`/projets/${params.id}`);
+              return redirect(`/projets/details/${params.id}`);
             }
 
             case "delete": {
@@ -275,6 +283,7 @@ const router = createBrowserRouter([
             description1: formData.get("description1"),
             description2: formData.get("description2"),
             description3: formData.get("description3"),
+            mates: formData.get("mates"),
             github: formData.get("github"),
             online: formData.get("online"),
             lien: formData.get("lien"),
@@ -305,29 +314,73 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "/projects",
-        element: <Projets />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/projects/:id",
-        element: <ProjetsDetails />,
-        errorElement: <ErrorPage />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
         errorElement: <ErrorPage />,
+        loader: async ({ params }) => {
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+          );
+          return response.data;
+        },
+      },
+      {
+        path: "/editInfos",
+        element: <EditInfos />,
+        errorElement: <ErrorPage />,
+        loader: async ({}) => {
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+          );
+          return response.data;
+        },
+        action: async ({ request }) => {
+          const formData = await request.formData();
+
+          switch (request.method.toLowerCase()) {
+            case "put": {
+              await axios.put(
+                `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+                {
+                  dispo: formData.get("dispo"),
+                  mail: formData.get("mail"),
+                  lnk: formData.get("lnk"),
+                  github: formData.get("github"),
+                  insta: formData.get("insta"),
+                  about: formData.get("about"),
+                  info1: formData.get("info1"),
+                  info2: formData.get("info2"),
+                  info3: formData.get("info3"),
+                  info4: formData.get("info4"),
+                  info5: formData.get("info5"),
+                }
+              );
+              return redirect(`/`);
+            }
+          }
+        },
       },
       {
         path: "/about",
         element: <About />,
         errorElement: <ErrorPage />,
+        loader: async ({}) => {
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+          );
+          return response.data;
+        },
       },
       {
         path: "/whoiam",
         element: <WhoIam />,
         errorElement: <ErrorPage />,
+        loader: async ({}) => {
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+          );
+          return response.data;
+        },
       },
       {
         path: "*",

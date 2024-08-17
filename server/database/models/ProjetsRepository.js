@@ -20,13 +20,14 @@ class ProjetsRepository extends AbstractRepository {
 
   async update(projets) {
     const [result] = await this.database.query(
-      `update ${this.table} set title = ?, description1 = ?, description2 = ?, description2 = ?, github = ?, online = ?, lien = ?, category = ?, img1 = ?, img2 = ?, img3 = ?, img4 = ?, img5 = ?, img6 = ?, img7 = ?, img8 = ?, img9 = ?, img10 = ? where id = ?`,
+      `update ${this.table} set title = ?, description1 = ?, description2 = ?, description3 = ?, mates = ?, github = ?, online = ?, lien = ?, category = ?, img1 = ?, img2 = ?, img3 = ?, img4 = ?, img5 = ?, img6 = ?, img7 = ?, img8 = ?, img9 = ?, img10 = ? where id = ?`,
 
       [
         projets.title,
         projets.description1,
         projets.description2,
         projets.description3,
+        projets.mates,
         projets.github,
         projets.online,
         projets.lien,
@@ -60,12 +61,13 @@ class ProjetsRepository extends AbstractRepository {
   async create(projets) {
     // Execute the SQL INSERT query to add a new terminal to the "terminal" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (title, description1, description2, description3, github, online, lien, category, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (title, description1, description2, description3, mates, github, online, lien, category, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10 ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         projets.title,
         projets.description1,
         projets.description2,
         projets.description3,
+        projets.mates,
         projets.github,
         projets.online,
         projets.lien,

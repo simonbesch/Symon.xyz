@@ -2,6 +2,7 @@
 const SkillsRepository = require("./models/SkillsRepository");
 const ParkourRepository = require("./models/ParkourRepository");
 const ProjetsRepository = require("./models/ProjetsRepository");
+const AllInfosRepository = require("./models/AllInfosRepository");
 
 const UserRepository = require("./models/UserRepository");
 
@@ -16,6 +17,7 @@ const tables = {};
 tables.skills = new SkillsRepository();
 tables.parkour = new ParkourRepository();
 tables.projets = new ProjetsRepository();
+tables.all_infos = new AllInfosRepository();
 
 tables.user = new UserRepository();
 

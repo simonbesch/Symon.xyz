@@ -33,11 +33,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  img {
+    margin-top: 10px;
+  }
 }
-.InfoContainer p {
+.Disponible {
   margin-top: 5px;
   color: greenyellow;
 }
+.Indisponible {
+  margin-top: 5px;
+  color: rgb(160, 21, 3);
+}
+.Dispo {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgDispo {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: aliceblue;
+  border-radius: 100px;
+}
+
 .iconContact {
   margin-top: 10px;
   width: 35px;

@@ -27,6 +27,7 @@ create table projects (
   description1 TEXT null,
   description2 TEXT null,
   description3 TEXT null,
+  mates varchar(255) null,
   github varchar(255) null,
   online varchar(255) null,
   lien varchar(255) null,
@@ -41,7 +42,6 @@ create table projects (
   img8 varchar(255) null,
   img9 varchar(255) null,
   img10 varchar(255) null
-
 );
 
 create table parkour (
@@ -61,6 +61,47 @@ create table comms (
   description TEXT not null,
   pseudo varchar(255) not null,
   mail varchar(255) not null
+);
+
+create table all_infos (
+  id int unsigned primary key auto_increment not null,
+  dispo varchar(255) null,
+  mail varchar(255) null,
+  lnk varchar(255) null,
+  github varchar(255) null,
+  insta varchar(255) null,
+  about TEXT null,
+  info1 TEXT null,
+  info2 TEXT null,
+  info3 TEXT null,
+  info4 TEXT null,
+  info5 TEXT null
+);
+
+INSERT INTO all_infos (
+  dispo,
+  mail,
+  lnk,
+  github,
+  insta,
+  about,
+  info1,
+  info2,
+  info3,
+  info4,
+  info5
+) VALUES (
+  'Disponible',
+  'simonbescheron@gmail.com',
+  'https://www.linkedin.com/in/simon-bescheron/',
+  'https://github.com/simonbesch',
+  'https://www.instagram.com/simonbesch/',
+  'about',
+  'info1',
+  'info2',
+  'info3',
+  'info4',
+  'info5'
 );
 
 INSERT INTO skills (

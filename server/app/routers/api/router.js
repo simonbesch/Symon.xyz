@@ -18,6 +18,9 @@ router.use("/projets", projetsRouter);
 const authRouter = require("./auth/router");
 router.use("/auth", authRouter);
 
+const allInfosRouter = require("./allInfos/router");
+router.use("/allInfos", allInfosRouter);
+
 /* ************************************************************************* */
 
 module.exports = router;

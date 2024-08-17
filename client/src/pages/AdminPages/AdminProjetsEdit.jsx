@@ -26,7 +26,7 @@ function AdminProjetsEdit() {
 
             <div className="form-group">
               <label htmlFor="description1">Description1 :</label>
-              <input
+              <textarea
                 type="text"
                 id="description1"
                 name="description1"
@@ -36,7 +36,7 @@ function AdminProjetsEdit() {
 
             <div className="form-group">
               <label htmlFor="description2">Description2 :</label>
-              <input
+              <textarea
                 type="text"
                 id="description2"
                 name="description2"
@@ -46,11 +46,21 @@ function AdminProjetsEdit() {
 
             <div className="form-group">
               <label htmlFor="description3">Description3 :</label>
-              <input
+              <textarea
                 type="text"
                 id="description3"
                 name="description3"
                 defaultValue={projets.description3}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="mates">Mates :</label>
+              <input
+                type="text"
+                id="mates"
+                name="mates"
+                defaultValue={projets.mates}
               />
             </div>
 
@@ -95,6 +105,7 @@ function AdminProjetsEdit() {
                 <option value="checkPoints">CheckPoints</option>
                 <option value="ateliersQuestes">Ateliers et Quêtes</option>
                 <option value="projetsPerso">Projets Perso</option>
+                <option value="sitesPerso">Sites Perso</option>
               </select>
             </div>
 

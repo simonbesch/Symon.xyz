@@ -4,91 +4,81 @@ import { useLoaderData, Link } from "react-router-dom";
 import { useAdmin } from "../contexts/AdminContext";
 
 function Projets() {
-  const parkour = useLoaderData();
+  const projects = useLoaderData();
   const { isAdmin } = useAdmin();
-  console.info(parkour);
-  const mapProjets = parkour.map((datas) =>
-    datas.upload === "yes" ? (
-      datas.category === "projets" ? (
-        <div className="divEvenement">
-          <div className="divEvenementContainer">
-            <Link to={`/projects/${datas.id}`}>
-              <img src={datas.img} alt="" />
-              <h4 key={datas.id} className="NameProject">
-                {datas.name}
-              </h4>
-            </Link>
-          </div>
+  console.info(projects);
+  const mapProjets = projects.map((datas) =>
+    datas.category === "projets" ? (
+      <div className="divEvenement">
+        <div className="divEvenementContainer">
+          <Link to={`/projets/details/${datas.id}`}>
+            <img src={datas.img1} alt="" />
+            <h4 key={datas.id} className="NameProject">
+              {datas.title}
+            </h4>
+          </Link>
         </div>
-      ) : null
+      </div>
     ) : null
   );
 
-  const mapCheckPoints = parkour.map((datas) =>
-    datas.upload === "yes" ? (
-      datas.category === "checkPoints" ? (
-        <div className="divEvenement">
-          <div className="divEvenementContainer">
-            <Link to={`/projects/${datas.id}`}>
-              <img src={datas.img} alt="" />
-              <h4 key={datas.id} className="NameProject">
-                {datas.name}
-              </h4>
-            </Link>
-          </div>
+  const mapCheckPoints = projects.map((datas) =>
+    datas.category === "checkPoints" ? (
+      <div className="divEvenement">
+        <div className="divEvenementContainer">
+          <Link to={`/projets/details/${datas.id}`}>
+            <img src={datas.img1} alt="" />
+            <h4 key={datas.id} className="NameProject">
+              {datas.title}
+            </h4>
+          </Link>
         </div>
-      ) : null
+      </div>
     ) : null
   );
 
-  const ateliersQuestes = parkour.map((datas) =>
-    datas.upload === "yes" ? (
-      datas.category === "ateliersQuestes" ? (
-        <div className="divEvenement">
-          <div className="divEvenementContainer">
-            <Link to={`/projects/${datas.id}`}>
-              <img src={datas.img} alt="" />
-              <h4 key={datas.id} className="NameProject">
-                {datas.name}
-              </h4>
-            </Link>
-          </div>
+  const ateliersQuestes = projects.map((datas) =>
+    datas.category === "ateliersQuestes" ? (
+      <div className="divEvenement">
+        <div className="divEvenementContainer">
+          <Link to={`/projets/details/${datas.id}`}>
+            <img src={datas.img1} alt="" />
+            <h4 key={datas.id} className="NameProject">
+              {datas.title}
+            </h4>
+          </Link>
         </div>
-      ) : null
+      </div>
     ) : null
   );
 
-  const sitesPerso = parkour.map((datas) =>
-    datas.upload === "yes" ? (
-      datas.category === "sitesPerso" ? (
-        <div className="divEvenement">
-          <div className="divEvenementContainer">
-            <Link to={`/projects/${datas.id}`}>
-              <img src={datas.img} alt="" />
-              <h4 key={datas.id} className="NameProject">
-                {datas.name}
-              </h4>
-            </Link>
-          </div>
+  const sitesPerso = projects.map((datas) =>
+    datas.category === "sitesPerso" ? (
+      <div className="divEvenement">
+        <div className="divEvenementContainer">
+          <Link to={`/projets/details/${datas.id}`}>
+            <img src={datas.img1} alt="" />
+            <h4 key={datas.id} className="NameProject">
+              {datas.title}
+            </h4>
+          </Link>
         </div>
-      ) : null
+      </div>
     ) : null
   );
 
-  const mapProjetsPerso = parkour.map((datas) =>
-    datas.upload === "yes" ? (
-      datas.category === "projetsPerso" ? (
-        <div className="divEvenement">
-          <div className="divEvenementContainer">
-            <Link to={`/projects/${datas.id}`}>
-              <img src={datas.img} alt="" />
-              <h4 key={datas.id} className="NameProject">
-                {datas.name}
-              </h4>
-            </Link>
-          </div>
+  const mapProjetsPerso = projects.map((datas) =>
+    datas.category === "projetsPerso" ? (
+      <div className="divEvenement">
+        <div className="divEvenementContainer">
+          <Link to={`/projets/details/${datas.id}`}>
+            <img src={datas.img1} alt="" />
+            <h4 key={datas.id} className="NameProject">
+              {datas.title}
+            </h4>
+          </Link>
         </div>
-      ) : null
+      </div>
     ) : null
   );
 

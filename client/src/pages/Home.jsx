@@ -1,9 +1,11 @@
 import "../styles/Home.scss";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { useLoaderData } from "react-router-dom";
 
 import { useAdmin } from "../contexts/AdminContext";
 
 function Home() {
+  const infos = useLoaderData();
   const { isAdmin } = useAdmin();
   return (
     <div>
@@ -27,7 +29,7 @@ function Home() {
         <h2>Full Stack</h2>
       </div>
       <div className="buttonHome">
-        <a href="https://github.com/simonbesch" target="_blank">
+        <a href={infos.github} target="_blank">
           <button className="buttonHomeProjet" type="button">
             <span>
               GIT
@@ -42,14 +44,14 @@ function Home() {
         </a>
       </div>
       <div className="iconeHomeContainer">
-        <a href="https://www.linkedin.com/in/simon-bescheron/" target="_blank">
+        <a href={infos.lnk} target="_blank">
           <img
             src="https://img.icons8.com/?size=100&id=67570&format=png&color=000000"
             alt=""
             className="iconeContactHome"
           />
         </a>
-        <a href="https://www.instagram.com/simonbesch/" target="_blank">
+        <a href={infos.insta} target="_blank">
           <img
             src="https://img.icons8.com/?size=100&id=102339&format=png&color=000000"
             alt=""

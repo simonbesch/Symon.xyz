@@ -1,7 +1,9 @@
 import "../styles/WhoIam.scss";
+import { useLoaderData } from "react-router-dom";
 
 function WhoIam() {
-  return <div>Who</div>;
+  const infos = useLoaderData();
+  return <div>{infos.about}</div>;
 }
 
 export default WhoIam;

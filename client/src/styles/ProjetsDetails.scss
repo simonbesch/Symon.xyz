@@ -7,7 +7,7 @@
   width: 100%;
 }
 .DPContainer p {
-  color: whitesmoke;
+  color: #f5f5f5;
 }
 .DPContainer h4 {
   margin-bottom: 5px;
@@ -23,12 +23,15 @@
 }
 .DPimgContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 15px;
 }
 .DPimgContainer img {
-  width: 300px;
-  height: 400px;
-  border-radius: 5px;
+  margin-top: 15px;
+  width: 25%;
+  height: 50%;
 }
 
 .arrowProjet {
@@ -56,8 +59,29 @@
 .DPDescription {
   margin-top: 15px;
 }
+.DPDescription {
+  .textAreaComponant {
+    background-color: rgba(0, 0, 0, 0);
+    color: #f5f5f5;
+    border: 1px solid rgba(0, 0, 0, 0);
+    resize: none;
+    width: 100%;
+    &::selection {
+      border: 1px solid rgba(0, 0, 0, 0);
+    }
+  }
+}
 
 .btnDeployement {
-  padding: 3px;
-  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  align-items: center;
+  border-radius: 10px;
+  border: 0px solid green;
+  background-color: #c545e6a9;
+  color: white;
+  font-size: 15px;
+  &:hover {
+    background-color: rgb(71, 22, 94);
+  }
 }
