@@ -9,11 +9,11 @@ import { useAdmin } from "../contexts/AdminContext";
 
 function Footer() {
   const { time, isLoading } = useWeather();
-  const { isAdmin } = useAdmin();
+  const { isAdmin, setIsAdmin } = useAdmin();
 
   const clearCookies = () => {
     Cookies.remove("authData");
-    window.location.reload();
+    setIsAdmin(false);
   };
 
   return (
