@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-        errorElement: <ErrorPage />,
+        errorElement: <Login />,
         action: async ({ request }) => {
           const formData = await request.formData();
           await axios.post(

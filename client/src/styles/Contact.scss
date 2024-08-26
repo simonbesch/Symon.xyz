@@ -30,13 +30,24 @@
 .InfoContainer {
   margin-top: 40px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   img {
     margin-top: 10px;
   }
 }
+
+.InfoContainer2 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -36px;
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .Disponible {
   margin-top: 5px;
   color: greenyellow;

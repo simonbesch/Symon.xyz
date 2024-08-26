@@ -33,7 +33,6 @@ function NavbarDesktop() {
               />
             </Link>
           ) : null}
-
           <Link to="/projets" className="linkProjets">
             <button className="glowing-btn">
               <span className="glowing-txt">

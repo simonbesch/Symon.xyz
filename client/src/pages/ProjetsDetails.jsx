@@ -1,5 +1,5 @@
 import "../styles/ProjetsDetails.scss";
-import { useLoaderData, Link, useParams } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import { useAdmin } from "../contexts/AdminContext";
 import TextareaAutosize from "react-textarea-autosize";
 

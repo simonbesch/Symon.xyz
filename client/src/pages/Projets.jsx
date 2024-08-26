@@ -6,7 +6,6 @@ import { useAdmin } from "../contexts/AdminContext";
 function Projets() {
   const projects = useLoaderData();
   const { isAdmin } = useAdmin();
-  console.info(projects);
   const mapProjets = projects.map((datas) =>
     datas.category === "projets" ? (
       <div className="divEvenement">

@@ -10,6 +10,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "amqplib": "^0.10.4",
     "axios": "^1.7.2",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.5",
     "hamburger-react": "^2.5.1",
     "js-cookie": "^3.0.5",

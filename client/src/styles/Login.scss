@@ -41,3 +41,51 @@
     }
   }
 }
+
+.login-wrong {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px 20px;
+  border: 1px solid #ff010160;
+  border-radius: 5px;
+  background-color: #ca38ee25;
+  width: 300px;
+
+  input {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    &:hover {
+      background-color: rgb(125, 54, 158);
+    }
+  }
+  label {
+    font-size: 18px;
+    color: white;
+  }
+  button {
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 0px solid green;
+    background-color: #ebaefa3f;
+    color: white;
+    font-size: 15px;
+    &:hover {
+      background-color: rgb(71, 22, 94);
+    }
+  }
+}
+.wrongP {
+  margin-top: 10px;
+  color: red;
+}

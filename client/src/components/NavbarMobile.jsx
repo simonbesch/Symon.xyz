@@ -58,13 +58,14 @@ function NavbarMobile() {
       </div>
       <div className="linkPlusDiv">
         {isAdmin ? (
-          <img
-            src="https://img.icons8.com/?size=100&id=118624&format=png&color=000000"
-            alt=""
-            className="logoImgAdmin"
-          />
+          <Link to="/editInfos">
+            <img
+              src="https://img.icons8.com/?size=100&id=118624&format=png&color=000000"
+              alt=""
+              className="logoImgAdmin"
+            />
+          </Link>
         ) : null}
-
         <Link to="/projets" className="linkProjets">
           <button className="glowing-btn">
             <span className="glowing-txt">
