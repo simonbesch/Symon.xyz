@@ -1,5 +1,4 @@
 import "../styles/Projets.scss";
-import allProjets from "../datas/projetsDatas";
 import { useLoaderData, Link } from "react-router-dom";
 import { useAdmin } from "../contexts/AdminContext";
 
