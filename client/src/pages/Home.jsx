@@ -8,7 +8,7 @@ function Home() {
   const infos = useLoaderData();
   const { isAdmin } = useAdmin();
   return (
-    <div>
+    <div className="HomeGlobal">
       <div className="Welcome">
         <h3>
           <SlArrowLeft className="iconeHomeWelcome" />

@@ -30,22 +30,22 @@ footer {
   );
   color: rgb(0, 0, 0);
   text-decoration: none;
-}
-footer h2 {
-  margin: 0;
-  padding: 0;
-}
-footer h5 {
-  margin: 0;
-  padding: 0;
-}
-footer p {
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
-}
-footer img {
-  padding-top: 12px;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  h5 {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+  }
+  img {
+    padding-top: 12px;
+  }
 }
 
 .Tours {
@@ -55,9 +55,43 @@ footer img {
   inset: auto auto 0 0;
   margin: 5px;
 }
+
 @media screen and (max-width: 520px) {
   .Tours {
     display: none;
+  }
+  footer {
+    display: block;
+    position: static;
+    z-index: 10;
+    inset: auto 0 0 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    background: -moz-linear-gradient(
+      bottom,
+      rgba(255, 255, 255, 0.884),
+      rgba(0, 255, 0, 0)
+    );
+    background: -webkit-linear-gradient(
+      bottom,
+      rgb(255, 255, 255),
+      rgba(0, 255, 0, 0)
+    );
+    background: -ms-linear-gradient(
+      bottom,
+      rgba(255, 255, 255, 0.699),
+      rgba(0, 255, 255, 0)
+    );
+    background: -o-linear-gradient(
+      bottom,
+      rgba(255, 255, 255, 0.795),
+      rgba(0, 255, 255, 0)
+    );
+    color: rgb(0, 0, 0);
+    text-decoration: none;
   }
 }
 @media screen and (min-width: 521px) {
