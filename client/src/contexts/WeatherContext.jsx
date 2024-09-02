@@ -9,7 +9,7 @@ export function WeatherProvider({ children }) {
 
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=Tours&appid=${WeatherKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=Tours&appid=${WeatherKey}`
     )
       .then((res) => res.json())
       .then((data) => {
