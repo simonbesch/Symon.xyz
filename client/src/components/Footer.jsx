@@ -27,8 +27,7 @@ function Footer() {
           <p>Température: {Math.floor(time.main.temp - 273.15)}°</p>
         </div>
       ) : null}
-
-      <h5>Merci à la Wild Code School ❤️</h5>
+      <h5>---</h5>
       <h5>Copyright © Simon Bescheron</h5>
       <h5>
         <Link to="/about" className="linkAbout">

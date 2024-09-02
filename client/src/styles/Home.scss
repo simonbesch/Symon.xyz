@@ -92,3 +92,22 @@
   margin-left: 5px;
   margin-right: 5px;
 }
+
+.HomeGlobal {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 450px) {
+  .Welcome {
+    font-size: 15px;
+  }
+  .iconeHomeWelcome {
+    height: 12px;
+  }
+  .homeContainer {
+    font-size: 10px;
+  }
+  .FullStack {
+    font-size: 10px;
+  }
+}
