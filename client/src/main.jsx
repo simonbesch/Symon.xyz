@@ -37,7 +37,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({}) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -67,7 +70,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async () => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/parkour`
+            `${import.meta.env.VITE_API_URL}/api/parkour`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -78,7 +84,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({ params }) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`
+            `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -97,6 +106,9 @@ const router = createBrowserRouter([
                   type: formData.get("type"),
                   actuel: formData.get("actuel"),
                   description: formData.get("description"),
+                },
+                {
+                  withCredentials: true,
                 }
               );
 
@@ -105,7 +117,10 @@ const router = createBrowserRouter([
 
             case "delete": {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`
+                `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`,
+                {
+                  withCredentials: true,
+                }
               );
 
               return redirect(`/parkour`);
@@ -122,15 +137,21 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         action: async ({ request }) => {
           const formData = await request.formData();
-          await axios.post(`${import.meta.env.VITE_API_URL}/api/parkour`, {
-            date: formData.get("date"),
-            lieu: formData.get("lieu"),
-            poste: formData.get("poste"),
-            structure: formData.get("structure"),
-            type: formData.get("type"),
-            actuel: formData.get("actuel"),
-            description: formData.get("description"),
-          });
+          await axios.post(
+            `${import.meta.env.VITE_API_URL}/api/parkour`,
+            {
+              date: formData.get("date"),
+              lieu: formData.get("lieu"),
+              poste: formData.get("poste"),
+              structure: formData.get("structure"),
+              type: formData.get("type"),
+              actuel: formData.get("actuel"),
+              description: formData.get("description"),
+            },
+            {
+              withCredentials: true,
+            }
+          );
           return redirect(`/parkour`);
         },
       },
@@ -140,7 +161,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async () => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/skills`
+            `${import.meta.env.VITE_API_URL}/api/skills`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -151,7 +175,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({ params }) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`
+            `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -169,6 +196,9 @@ const router = createBrowserRouter([
                   description: formData.get("description"),
                   category: formData.get("category"),
                   icon: formData.get("icon"),
+                },
+                {
+                  withCredentials: true,
                 }
               );
 
@@ -177,7 +207,10 @@ const router = createBrowserRouter([
 
             case "delete": {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`
+                `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`,
+                {
+                  withCredentials: true,
+                }
               );
 
               return redirect(`/skills`);
@@ -194,14 +227,20 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         action: async ({ request }) => {
           const formData = await request.formData();
-          await axios.post(`${import.meta.env.VITE_API_URL}/api/skills`, {
-            name: formData.get("name"),
-            level: formData.get("level"),
-            levelCSS: formData.get("levelCSS"),
-            description: formData.get("description"),
-            category: formData.get("category"),
-            icon: formData.get("icon"),
-          });
+          await axios.post(
+            `${import.meta.env.VITE_API_URL}/api/skills`,
+            {
+              name: formData.get("name"),
+              level: formData.get("level"),
+              levelCSS: formData.get("levelCSS"),
+              description: formData.get("description"),
+              category: formData.get("category"),
+              icon: formData.get("icon"),
+            },
+            {
+              withCredentials: true,
+            }
+          );
           return redirect(`/skills`);
         },
       },
@@ -211,7 +250,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async () => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/projets`
+            `${import.meta.env.VITE_API_URL}/api/projets`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -222,7 +264,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({ params }) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`
+            `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -253,6 +298,9 @@ const router = createBrowserRouter([
                   img8: formData.get("img8"),
                   img9: formData.get("img9"),
                   img10: formData.get("img10"),
+                },
+                {
+                  withCredentials: true,
                 }
               );
 
@@ -261,7 +309,10 @@ const router = createBrowserRouter([
 
             case "delete": {
               await axios.delete(
-                `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`
+                `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`,
+                {
+                  withCredentials: true,
+                }
               );
 
               return redirect(`/projets`);
@@ -278,27 +329,33 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         action: async ({ request }) => {
           const formData = await request.formData();
-          await axios.post(`${import.meta.env.VITE_API_URL}/api/projets`, {
-            title: formData.get("title"),
-            description1: formData.get("description1"),
-            description2: formData.get("description2"),
-            description3: formData.get("description3"),
-            mates: formData.get("mates"),
-            github: formData.get("github"),
-            online: formData.get("online"),
-            lien: formData.get("lien"),
-            category: formData.get("category"),
-            img1: formData.get("img1"),
-            img2: formData.get("img2"),
-            img3: formData.get("img3"),
-            img4: formData.get("img4"),
-            img5: formData.get("img5"),
-            img6: formData.get("img6"),
-            img7: formData.get("img7"),
-            img8: formData.get("img8"),
-            img9: formData.get("img9"),
-            img10: formData.get("img10"),
-          });
+          await axios.post(
+            `${import.meta.env.VITE_API_URL}/api/projets`,
+            {
+              title: formData.get("title"),
+              description1: formData.get("description1"),
+              description2: formData.get("description2"),
+              description3: formData.get("description3"),
+              mates: formData.get("mates"),
+              github: formData.get("github"),
+              online: formData.get("online"),
+              lien: formData.get("lien"),
+              category: formData.get("category"),
+              img1: formData.get("img1"),
+              img2: formData.get("img2"),
+              img3: formData.get("img3"),
+              img4: formData.get("img4"),
+              img5: formData.get("img5"),
+              img6: formData.get("img6"),
+              img7: formData.get("img7"),
+              img8: formData.get("img8"),
+              img9: formData.get("img9"),
+              img10: formData.get("img10"),
+            },
+            {
+              withCredentials: true,
+            }
+          );
           return redirect(`/projets`);
         },
       },
@@ -308,7 +365,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({ params }) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`
+            `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -319,7 +379,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({ params }) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -330,7 +393,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({}) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -353,6 +419,9 @@ const router = createBrowserRouter([
                   info3: formData.get("info3"),
                   info4: formData.get("info4"),
                   info5: formData.get("info5"),
+                },
+                {
+                  withCredentials: true,
                 }
               );
               return redirect(`/`);
@@ -366,7 +435,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({}) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },
@@ -377,7 +449,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         loader: async ({}) => {
           const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/api/allInfos/1`
+            `${import.meta.env.VITE_API_URL}/api/allInfos/1`,
+            {
+              withCredentials: true,
+            }
           );
           return response.data;
         },

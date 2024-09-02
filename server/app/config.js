@@ -6,16 +6,16 @@ const app = express();
 
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: [
-      process.env.CLIENT_URL, // keep this one, after checking the value in `server/.env`
-      // "http://mysite.com",
-      // "http://another-domain.com",
-    ],
-    credentials: true,
-  })
-);
+// Configuration des options CORS
+const corsOptions = {
+  origin: process.env.CLIENT_URL, // Remplacez par le domaine de votre frontend
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Permet l'envoi des cookies et autres informations d'identification
+  allowedHeaders: "Content-Type,Authorization",
+};
+
+// Utilisation du middleware CORS avec les options configurÃ©es
+app.use(cors(corsOptions));
 
 app.use(express.json());
 // app.use(express.urlencoded());

@@ -29,6 +29,10 @@ const login = async (req, res, next) => {
 
       res.cookie("authData", token, {
         maxAge: 3600000,
+        //httpOnly: true,  // EmpÃªche l'accÃ¨s au cookie via JavaScript cÃ´tÃ© client
+        //secure: true,    // Assure que le cookie est envoyÃ© uniquement via HTTPS
+        //sameSite: 'None', // Permet l'envoi de cookies dans des requÃªtes cross-origin
+        //domain: '.symon.xyz', // Partage entre sous-domaines
       });
 
       res.sendStatus(200);
