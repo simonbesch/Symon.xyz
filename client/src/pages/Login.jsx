@@ -5,8 +5,8 @@ function Login() {
   const error = useRouteError();
 
   return (
-    <div>
-      {error.message === "error is null" ? (
+    <div className="LoginGlobal">
+      {error.message !== "440" ? (
         <Form method="post" className="login">
           <label htmlFor="email">Mail :</label>
           <input type="text" id="email" name="email" required />
