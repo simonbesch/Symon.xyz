@@ -6,24 +6,13 @@ function Login() {
 
   return (
     <div className="LoginGlobal">
-      {error.message !== "440" ? (
-        <Form method="post" className="login">
-          <label htmlFor="email">Mail :</label>
-          <input type="text" id="email" name="email" required />
-          <label htmlFor="password">Password :</label>
-          <input type="password" id="password" name="password" required />
-          <button type="submit">Connection</button>
-        </Form>
-      ) : (
-        <Form method="post" className="login-wrong">
-          <label htmlFor="email">Mail :</label>
-          <input type="text" id="email" name="email" required />
-          <label htmlFor="password">Password :</label>
-          <input type="password" id="password" name="password" required />
-          <button type="submit">Connection</button>
-          <p className="wrongP">Mauvaises informations</p>
-        </Form>
-      )}
+      <Form method="post" className="login">
+        <label htmlFor="email">Mail :</label>
+        <input type="text" id="email" name="email" required />
+        <label htmlFor="password">Password :</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Connection</button>
+      </Form>
     </div>
   );
 }

@@ -4,9 +4,10 @@ import {
   RouterProvider,
   redirect,
 } from "react-router-dom";
+import App from "./App";
 import Login from "./pages/Login";
 import ErrorPage from "./error-page";
-import App from "./App";
+import LoginError from "./components/LoginError";
 import Home from "./pages/Home";
 import Parkour from "./pages/Parkour";
 import Skills from "./pages/Skills";
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-        errorElement: <Login />,
+        errorElement: <LoginError />,
         action: async ({ request }) => {
           const formData = await request.formData();
           await axios.post(
@@ -508,7 +509,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <h1>404 Page non trouvé</h1>,
+        element: <ErrorPage />,
         errorElement: <ErrorPage />,
       },
     ],

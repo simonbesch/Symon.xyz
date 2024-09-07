@@ -6,9 +6,10 @@ function LoginError() {
   return (
     <div id="error-page">
       {error.message == "Request failed with status code 440"
-        ? "mauvais mdp"
-        : "erreur"}
-      <Link to="/login">retourner</Link>
+        ? "mauvaises infos"
+        : "mauvaises infos"}
+      <br />
+      <Link to="/login"> - Réessayer - </Link>
     </div>
   );
 }

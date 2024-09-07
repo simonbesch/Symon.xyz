@@ -5,11 +5,7 @@ function ErrorPage() {
 
   return (
     <div id="error-page">
-      <h1>Error 404</h1>
-      <p>Perdu, tu dois pas etre la normalement</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+      <h1>Tu m'a l'air perdu ?</h1>
     </div>
   );
 }
