@@ -1,0 +1,10 @@
+.textAreaComponant {
+  background-color: rgba(0, 0, 0, 0);
+  color: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0);
+  resize: none;
+  width: 100%;
+  &::selection {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
