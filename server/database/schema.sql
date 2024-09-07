@@ -44,6 +44,7 @@ create table projects (
   img10 varchar(255) null
 );
 
+
 create table parkour (
   id int unsigned primary key auto_increment not null,
   date varchar(255) not null,
@@ -76,6 +77,12 @@ create table all_infos (
   info3 TEXT null,
   info4 TEXT null,
   info5 TEXT null
+);
+
+create table tutos (
+  id int unsigned primary key auto_increment not null,
+  title varchar(25) not null,
+  description TEXT null
 );
 
 INSERT INTO all_infos (

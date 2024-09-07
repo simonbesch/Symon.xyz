@@ -1,4 +1,5 @@
 const express = require("express");
+const { verifyToken } = require("../../../services/verifToken");
 
 const router = express.Router();
 
@@ -12,13 +13,13 @@ const {
 
 router.get("/", browse);
 
-router.get("/:id", read);
+router.get("/:id", verifyToken, read);
 
-router.put("/:id", edit);
+router.put("/:id", verifyToken, edit);
 
-router.delete("/:id", destroy);
+router.delete("/:id", verifyToken, destroy);
 
-router.post("/", add);
+router.post("/", verifyToken, add);
 
 // router.post("/", add);
 

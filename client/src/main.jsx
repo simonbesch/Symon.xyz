@@ -25,7 +25,20 @@ import EditInfos from "./pages/AdminPages/EditInfos";
 import "./styles/Global.scss";
 import { AdminProvider } from "./contexts/AdminContext";
 import { WeatherProvider } from "./contexts/WeatherContext";
+import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+
+const withAuth =
+  (Func) =>
+  async (Args = {}) => {
+    const authData = Cookies.get("authData");
+    if (!authData) {
+      throw new Response("Unauthorized", { status: 401 });
+    }
+    // eslint-disable-next-line no-return-await
+    return await Func(Args, authData);
+  };
 
 const router = createBrowserRouter([
   {
@@ -82,16 +95,19 @@ const router = createBrowserRouter([
         path: "/parkour/:id",
         element: <AdminParkourEdit />,
         errorElement: <ErrorPage />,
-        loader: async ({ params }) => {
+        loader: withAuth(async ({ params }, auth) => {
           const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`,
             {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
               withCredentials: true,
             }
           );
           return response.data;
-        },
-        action: async ({ request, params }) => {
+        }),
+        action: withAuth(async ({ request, params }, auth) => {
           const formData = await request.formData();
 
           switch (request.method.toLowerCase()) {
@@ -108,6 +124,9 @@ const router = createBrowserRouter([
                   description: formData.get("description"),
                 },
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -119,6 +138,9 @@ const router = createBrowserRouter([
               await axios.delete(
                 `${import.meta.env.VITE_API_URL}/api/parkour/${params.id}`,
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -129,13 +151,13 @@ const router = createBrowserRouter([
             default:
               throw new Response("", { status: 405 });
           }
-        },
+        }),
       },
       {
         path: "/parkour/add",
         element: <AdminParkourAdd />,
         errorElement: <ErrorPage />,
-        action: async ({ request }) => {
+        action: withAuth(async ({ request }, auth) => {
           const formData = await request.formData();
           await axios.post(
             `${import.meta.env.VITE_API_URL}/api/parkour`,
@@ -149,11 +171,14 @@ const router = createBrowserRouter([
               description: formData.get("description"),
             },
             {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
               withCredentials: true,
             }
           );
           return redirect(`/parkour`);
-        },
+        }),
       },
       {
         path: "/skills",
@@ -173,16 +198,19 @@ const router = createBrowserRouter([
         path: "/skills/:id",
         element: <AdminSkillsEdit />,
         errorElement: <ErrorPage />,
-        loader: async ({ params }) => {
+        loader: withAuth(async ({ params }, auth) => {
           const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`,
             {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
               withCredentials: true,
             }
           );
           return response.data;
-        },
-        action: async ({ request, params }) => {
+        }),
+        action: withAuth(async ({ request, params }, auth) => {
           const formData = await request.formData();
 
           switch (request.method.toLowerCase()) {
@@ -198,6 +226,9 @@ const router = createBrowserRouter([
                   icon: formData.get("icon"),
                 },
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -209,6 +240,9 @@ const router = createBrowserRouter([
               await axios.delete(
                 `${import.meta.env.VITE_API_URL}/api/skills/${params.id}`,
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -219,13 +253,13 @@ const router = createBrowserRouter([
             default:
               throw new Response("", { status: 405 });
           }
-        },
+        }),
       },
       {
         path: "/skills/add",
         element: <AdminSkillsAdd />,
         errorElement: <ErrorPage />,
-        action: async ({ request }) => {
+        action: withAuth(async ({ request }, auth) => {
           const formData = await request.formData();
           await axios.post(
             `${import.meta.env.VITE_API_URL}/api/skills`,
@@ -238,11 +272,14 @@ const router = createBrowserRouter([
               icon: formData.get("icon"),
             },
             {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
               withCredentials: true,
             }
           );
           return redirect(`/skills`);
-        },
+        }),
       },
       {
         path: "/projets",
@@ -262,7 +299,7 @@ const router = createBrowserRouter([
         path: "/projets/:id",
         element: <AdminProjetsEdit />,
         errorElement: <ErrorPage />,
-        loader: async ({ params }) => {
+        loader: withAuth(async ({ params }, auth) => {
           const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`,
             {
@@ -270,8 +307,8 @@ const router = createBrowserRouter([
             }
           );
           return response.data;
-        },
-        action: async ({ request, params }) => {
+        }),
+        action: withAuth(async ({ request, params }, auth) => {
           const formData = await request.formData();
 
           switch (request.method.toLowerCase()) {
@@ -300,6 +337,9 @@ const router = createBrowserRouter([
                   img10: formData.get("img10"),
                 },
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -311,6 +351,9 @@ const router = createBrowserRouter([
               await axios.delete(
                 `${import.meta.env.VITE_API_URL}/api/projets/${params.id}`,
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
@@ -321,13 +364,13 @@ const router = createBrowserRouter([
             default:
               throw new Response("", { status: 405 });
           }
-        },
+        }),
       },
       {
         path: "/projets/add",
         element: <AdminProjetsAdd />,
         errorElement: <ErrorPage />,
-        action: async ({ request }) => {
+        action: withAuth(async ({ request }, auth) => {
           const formData = await request.formData();
           await axios.post(
             `${import.meta.env.VITE_API_URL}/api/projets`,
@@ -353,11 +396,14 @@ const router = createBrowserRouter([
               img10: formData.get("img10"),
             },
             {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
               withCredentials: true,
             }
           );
           return redirect(`/projets`);
-        },
+        }),
       },
       {
         path: "/projets/details/:id",
@@ -400,7 +446,7 @@ const router = createBrowserRouter([
           );
           return response.data;
         },
-        action: async ({ request }) => {
+        action: withAuth(async ({ request, params }, auth) => {
           const formData = await request.formData();
 
           switch (request.method.toLowerCase()) {
@@ -421,13 +467,16 @@ const router = createBrowserRouter([
                   info5: formData.get("info5"),
                 },
                 {
+                  headers: {
+                    Authorization: `Bearer ${auth}`,
+                  },
                   withCredentials: true,
                 }
               );
               return redirect(`/`);
             }
           }
-        },
+        }),
       },
       {
         path: "/about",

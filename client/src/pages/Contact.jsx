@@ -26,11 +26,9 @@ function Home() {
       )
       .then(
         (result) => {
-          console.log(result.text);
           alert("Message Sent Successfully");
         },
         (error) => {
-          console.log(error.text);
           alert("Something went wrong!");
         }
       );
