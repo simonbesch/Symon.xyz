@@ -32,7 +32,6 @@ class AllInfosRepository extends AbstractRepository {
         all_infos.id,
       ]
     );
-    console.info(result.affectedRows);
     return result.affectedRows;
   }
 }

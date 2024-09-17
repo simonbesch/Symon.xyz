@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router-dom";
+import { Form, useLoaderData, Link } from "react-router-dom";
 import { useAdmin } from "../../contexts/AdminContext";
 import Nop from "../../components/Nop";
 
@@ -108,6 +108,8 @@ function EditInfo() {
             </div>
             <button type="submit">Modifier</button>
           </Form>
+          <Link to={`/editmdp`}>Changer le mot de passe</Link>
+          <Link to={`/editmail`}>Changer le mail</Link>
         </div>
       )}
     </>

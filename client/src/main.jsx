@@ -7,7 +7,7 @@ import {
 import App from "./App";
 import Login from "./pages/Login";
 import ErrorPage from "./error-page";
-import LoginError from "./components/LoginError";
+import Error from "./components/Error";
 import Home from "./pages/Home";
 import Parkour from "./pages/Parkour";
 import Skills from "./pages/Skills";
@@ -22,12 +22,13 @@ import AdminParkourEdit from "./pages/AdminPages/AdminParkourEdit";
 import AdminParkourAdd from "./pages/AdminPages/AdminParkourAdd";
 import AdminProjetsEdit from "./pages/AdminPages/AdminProjetsEdit";
 import AdminProjetsAdd from "./pages/AdminPages/AdminProjetsAdd";
+import EditMdp from "./pages/AdminPages/EditMdp";
+import EditMail from "./pages/AdminPages/EditMail";
 import EditInfos from "./pages/AdminPages/EditInfos";
 import "./styles/Global.scss";
 import { AdminProvider } from "./contexts/AdminContext";
 import { WeatherProvider } from "./contexts/WeatherContext";
 import Cookies from "js-cookie";
-import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 const withAuth =
@@ -62,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-        errorElement: <LoginError />,
+        errorElement: <Error />,
         action: async ({ request }) => {
           const formData = await request.formData();
           await axios.post(
@@ -77,6 +78,56 @@ const router = createBrowserRouter([
           );
           return redirect(`/`);
         },
+      },
+      {
+        path: "/editmdp",
+        element: <EditMdp />,
+        errorElement: <Error />,
+        action: withAuth(async ({ request }, auth) => {
+          const formData = await request.formData();
+          await axios.put(
+            `${import.meta.env.VITE_API_URL}/api/auth`,
+            {
+              action: "editmdp",
+              email: formData.get("email"),
+              ancienmdp: formData.get("ancienmdp"),
+              nouveaumdp: formData.get("nouveaumdp"),
+              nouveaumdpconf: formData.get("nouveaumdpconf"),
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
+              withCredentials: true,
+            }
+          );
+          return redirect(`/`);
+        }),
+      },
+      {
+        path: "/editmail",
+        element: <EditMail />,
+        errorElement: <Error />,
+        action: withAuth(async ({ request }, auth) => {
+          const formData = await request.formData();
+          await axios.put(
+            `${import.meta.env.VITE_API_URL}/api/auth`,
+            {
+              action: "editmail",
+              email: formData.get("email"),
+              nouveaumail: formData.get("nouveaumail"),
+              confmail: formData.get("confmail"),
+              mdp: formData.get("mdp"),
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${auth}`,
+              },
+              withCredentials: true,
+            }
+          );
+          return redirect(`/`);
+        }),
       },
       {
         path: "/parkour",
